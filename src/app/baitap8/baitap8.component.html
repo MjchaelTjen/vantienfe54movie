@@ -1,0 +1,20 @@
+<h1 class="text-center text-warning">Bài tập đặt vé xe bus</h1>
+
+<div class="container">
+  <div class="row">
+    <!-- Danh sách ghế -->
+    <div class="col-sm-6">
+      <app-danh-sach-ghe
+        #dsGhe
+        (onSelect)="chonGhe($event)"
+      ></app-danh-sach-ghe>
+    </div>
+    <!-- Danh sách ghế đã đặt -->
+    <div class="col-sm-6">
+      <app-danh-sach-ghe-da-dat
+        #dsGheDaDat
+        (onRemove)="huyGhe($event)"
+      ></app-danh-sach-ghe-da-dat>
+    </div>
+  </div>
+</div>

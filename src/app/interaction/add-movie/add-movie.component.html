@@ -1,0 +1,21 @@
+<div class="form-group">
+  <label>Tên Phim</label>
+  <input type="text" class="form-control" #name />
+</div>
+
+<div class="form-group">
+  <label>Giá</label>
+  <input type="text" class="form-control" #price />
+</div>
+
+<div class="form-group">
+  <label>Hình ảnh</label>
+  <input type="file" class="form-control-file" #image />
+</div>
+
+<button
+  class="btn btn-success"
+  (click)="handleAddMovie(name.value, price.value, image.files)"
+>
+  Thêm Phim
+</button>

@@ -1,0 +1,8 @@
+<h3 class="text-warning">
+  Danh sách ghế đã đặt ({{ danhSachGheDaDat.length }})
+</h3>
+
+<p *ngFor="let ghe of danhSachGheDaDat">
+  Ghế: {{ ghe.soGhe }} - ${{ ghe.gia }}
+  <a class="text-danger" (click)="huyGhe(ghe.soGhe)">[Huỷ]</a>
+</p>

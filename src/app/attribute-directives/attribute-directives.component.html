@@ -1,0 +1,45 @@
+<!-- <p className={`nav ${isActive ? 'active' : ''}`}>
+
+</p> -->
+
+<!-- ngClass -->
+<p
+  class="text-center"
+  [class]="{ 'bg-primary': isActive, 'bg-secondary': !isActive }"
+>
+  Hello Angular
+</p>
+
+<button (click)="isActive = !isActive">Toggle</button>
+
+<!-- ngStyle -->
+<p style="text-align: center" [style]="{ 'background-color': color }">
+  Demo style
+</p>
+
+<div
+  style="width: 100%; height: 300px; background-repeat: no-repeat"
+  [style]="{ 'background-image': 'url(' + imageUrl + ')' }"
+></div>
+
+<p ngNonBindable>
+  {{ color }}
+</p>
+
+<!-- Xử in chuỗi html ra giao diện -->
+<p [innerHTML]="result">
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+<!-- ngIf: ẩn hiện component -->
+<p *ngIf="isActive">Hello Angular</p>
+
+<button (click)="isActive = !isActive">Toggle</button>
+
+<br />
+<br />
+
+<!-- View khi đã login -->
+<div *ngIf="isLogin; else loginTemplate">
+  <p>Hello Cybersoft</p>
+  <button (click)="isLogin = false">Đăng xuất</button>
+</div>
+
+<!-- View khi chưa login -->
+<!-- <div *ngIf="!isLogin">
+  <button (click)="isLogin = true">Đăng Nhập</button>
+</div> -->
+
+<!-- ng-template: component do angular định nghĩa sẵn, mặc định nội dung bên trong ng-template sẽ không được render ra giao diện, nó sẽ chỉ đc render ra khi mình gọi tới nó -->
+<ng-template #loginTemplate>
+  <div>
+    <button (click)="isLogin = true">Đăng Nhập</button>
+  </div>
+</ng-template>
+
+<!-- ngSwitch: ẩn hiện component hoặc view -->
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'primary'" class="bg-primary">Primary</p>
+  <p *ngSwitchCase="'secondary'" class="bg-secondary">Secondary</p>
+  <p *ngSwitchCase="'danger'" class="bg-danger">Danger</p>
+  <p *ngSwitchCase="'warning'" class="bg-warning">Warning</p>
+  <p *ngSwitchDefault>Default</p>
+</div>
+
+<select [(ngModel)]="color">
+  <option value="">Default</option>
+  <option value="primary">Primary</option>
+  <option value="secondary">Secondary</option>
+  <option value="danger">Danger</option>
+  <option value="warning">Warning</option>
+</select>
+
+<!-- NgFor: duyệt mảng -->
+<div class="container">
+  <p *ngFor="let sv of dssv; let idx = index; count as total">
+    {{ idx + 1 }}/{{ total }} - {{ sv.hoTen }} - {{ sv.lop }}
+  </p>
+</div>
+
+<!-- Không thể để 2 Structural Directives trên cùng 1 thẻ -->
+<div *ngIf="dssv" class="container">
+  <p *ngFor="let sv of dssv">{{ sv.hoTen }} - {{ sv.lop }}</p>
+</div>
+
+<!-- ng-container: thẻ này sẽ không được render ra giao diện -->
+<ng-container *ngIf="dssv">
+  <p *ngFor="let sv of dssv">{{ sv.hoTen }} - {{ sv.lop }}</p>
+</ng-container>
+
+<!-- ngTemplateOutlet: kết hợp giữa ng-template và ng-container để tái sử dụng giao diện -->
+<ng-template #errorTemplate>
+  <div class="alert alert-danger" role="alert">
+    <strong>Something went wrong</strong>
+  </div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="errorTemplate"></ng-container>
+<ng-container *ngTemplateOutlet="errorTemplate"></ng-container>
+<ng-container *ngTemplateOutlet="errorTemplate"></ng-container>
+
+
+
+
+
+
+
+
+
+
+
+

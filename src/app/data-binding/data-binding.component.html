@@ -1,0 +1,36 @@
+<!-- Interpolation -->
+<p>
+  {{ message }}
+</p>
+
+<!-- <input value="{{ message }}" /> -->
+
+<!-- Property binding -->
+<input [value]="message" [disabled]="isActive" />
+
+<!-- Event binding -->
+<input [value]="message" #messageRef />
+<button (click)="handleChangeMessage(messageRef)">Click</button>
+
+<p>{{ username }}</p>
+<input [value]="username" (change)="handleChangeUsername($event)" />
+<input [value]="username" (input)="handleChangeUsername($event)" />
+
+<!-- Two-way binding -->
+<p>{{ email }}</p>
+<input [(ngModel)]="email" />
+<!-- <input [value]="email" (input)="email = $event.target.value" /> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

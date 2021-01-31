@@ -1,0 +1,11 @@
+<button
+  class="ghe btn btn-secondary"
+  [class]="{
+    'btn-danger': ghe.daDat,
+    'btn-success': dangChon
+  }"
+  [disabled]="ghe.daDat"
+  (click)="chonGhe()"
+>
+  {{ghe.soGhe}}
+</button>

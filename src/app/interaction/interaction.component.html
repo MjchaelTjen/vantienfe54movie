@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="text-center">Interaction</h1>
+
+  <app-add-movie (onAdd)="handleAddMovie($event)"></app-add-movie>
+
+  <!-- Cách 1: dùng truyền input -->
+  <!-- <app-movie-list [newMovie]="newMovie"></app-movie-list> -->
+
+  <!-- Cách 2 dùng viewChild -->
+  <app-movie-list #movieList></app-movie-list>
+</div>
